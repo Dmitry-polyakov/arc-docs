@@ -1,0 +1,57 @@
+site_name: Arc Workflow Documentation
+site_url: https://dmitry-polyakov.github.io/ark-docs/
+repo_url: https://github.com/dmitry-polyakov/ark-docs/
+site_author: DevOps Team
+use_directory_urls: true
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  icon:
+    annotation: material/chevron-right-circle
+  name: material
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - header.autohide
+    - navigation.indexes
+    - navigation.sections    # Enables section-based side navigation
+    - navigation.expand     # Expands navigation by default
+    - navigation.tracking   # Highlights the current page
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: annotate
+          class: annotate
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji
+  - attr_list
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mermaid2
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css
+  - https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js
+  - javascripts/animations.js
+
+nav:
+  - 'Работа с Arc': 'index.md'
+  - 'Руководство по Arc': 
+      - 'Общие сведения': 'arc_workflow.md'
+      - 'Дополнительные команды': 'advanced_commands.md'
